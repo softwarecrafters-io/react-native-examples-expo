@@ -18,7 +18,7 @@ export const DrawerNavigatorContainer = () => {
   const drawerType = width >= 768 ? 'permanent': 'front';
   return (
   <NavigationContainer>
-    <Drawer.Navigator drawerType= {drawerType} screenOptions={screenOptions} >
+    <Drawer.Navigator screenOptions={screenOptions} >
       <Drawer.Screen name={"StackNavigator"} options={{title: 'Home'}} component={StackNavigator} />
       <Drawer.Screen name={"SettingsScreen"} options={{title: 'Settings'}} component={SettingsScreen} />
     </Drawer.Navigator>

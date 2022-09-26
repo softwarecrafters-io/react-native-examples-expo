@@ -10,11 +10,11 @@ interface Props extends DrawerScreenProps<RootStackParams, 'Screen1'>{}
 
 export const Screen1 = ({ navigation }:Props) => {
   const user = new User('miguelghz', "Miguel A. Gómez")
-  useEffect(()=>{
+  /*useEffect(()=>{
     navigation.setOptions({
       headerLeft: ()=> <Button title={'menu'} onPress={()=> navigation.toggleDrawer()}></Button>
     })
-  })
+  })*/
 
   return(
       <View style={styles.container}>

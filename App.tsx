@@ -1,6 +1,5 @@
-import {CalculatorScreen} from "./src/08-Caculator/screens/CalculatorScreen";
-import {StackNavigatorContainer} from "./src/09-Navigation/StackNavigator";
+import {DrawerNavigatorContainer} from "./src/09-Navigation/DrawerNavigator";
 
 export default function App() {
-  return (<StackNavigatorContainer/>);
+  return (<DrawerNavigatorContainer/>);
 }

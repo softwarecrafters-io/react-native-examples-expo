@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {
   createDrawerNavigator,
   DrawerContentComponentProps,
-  DrawerContentOptions, DrawerContentScrollView,
+  DrawerContentScrollView,
   DrawerNavigationOptions,
 } from "@react-navigation/drawer";
 import { StackNavigator } from "./StackNavigator";
@@ -30,7 +30,7 @@ export const DrawerNavigatorCustom = () => {
   const {width} = useWindowDimensions()
   const drawerType = width >= 768 ? 'permanent': 'front';
   return (
-    <Drawer.Navigator drawerType= {drawerType} screenOptions={screenOptions} drawerContent={InternalMenu}>
+    <Drawer.Navigator  screenOptions={screenOptions} drawerContent={InternalMenu}>
       <Drawer.Screen name={"StackNavigator"} options={{title: 'Home'}} component={StackNavigator} />
       <Drawer.Screen name={"BottomTabNavigator"} options={{title: 'Options'}} component={BottomTabNavigator} />
     </Drawer.Navigator>
@@ -44,7 +44,7 @@ const screenOptions: DrawerNavigationOptions = {
   },
 }
 
-const InternalMenu = ({ navigation }:DrawerContentComponentProps<DrawerContentOptions>) =>{
+const InternalMenu = ({ navigation }:DrawerContentComponentProps) =>{
   return (
     <DrawerContentScrollView>
       <View style={styles.avatarContainer}>
