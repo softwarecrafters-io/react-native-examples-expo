@@ -28,9 +28,12 @@ export const styles = StyleSheet.create({
     marginHorizontal:30,
   },
   menuButton: {
+    flexDirection:'row',
+    justifyContent:'flex-start',
     marginVertical: 10
   },
   menuText:{
+    marginLeft:10,
     fontSize:20
   }
 

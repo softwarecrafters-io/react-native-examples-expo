@@ -1,5 +1,7 @@
-import {DrawerNavigatorContainer} from "./src/09-Navigation/DrawerNavigator";
+import React from "react";
+
+import {DrawerNavigatorCustomContainer} from "./src/09-Navigation/DrawerNavigatorCustom";
 
 export default function App() {
-  return (<DrawerNavigatorContainer/>);
+  return (<DrawerNavigatorCustomContainer/>);
 }

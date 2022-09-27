@@ -11,10 +11,13 @@ import { StackNavigator } from "./StackNavigator";
 import { Image, Text, TouchableOpacity, useWindowDimensions, View } from "react-native";
 import { styles } from "./Theme";
 import { BottomTabNavigator } from "./BottomTabNavigator";
+import {TopTabNavigator} from "./TopTabNavigator";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export type RootDrawerParams = {
   StackNavigator: undefined,
   BottomTabNavigator: undefined,
+  TopTabNavigator: undefined,
 }
 
 const Drawer = createDrawerNavigator<RootDrawerParams>()
@@ -30,9 +33,10 @@ export const DrawerNavigatorCustom = () => {
   const {width} = useWindowDimensions()
   const drawerType = width >= 768 ? 'permanent': 'front';
   return (
-    <Drawer.Navigator  screenOptions={screenOptions} drawerContent={InternalMenu}>
-      <Drawer.Screen name={"StackNavigator"} options={{title: 'Home'}} component={StackNavigator} />
-      <Drawer.Screen name={"BottomTabNavigator"} options={{title: 'Options'}} component={BottomTabNavigator} />
+    <Drawer.Navigator  screenOptions={{...screenOptions, drawerType}} drawerContent={InternalMenu}>
+      <Drawer.Screen name={"StackNavigator"}  component={StackNavigator} />
+      <Drawer.Screen name={"BottomTabNavigator"} component={BottomTabNavigator} />
+      <Drawer.Screen name={"TopTabNavigator"} component={TopTabNavigator} />
     </Drawer.Navigator>
   )
 }
@@ -52,10 +56,16 @@ const InternalMenu = ({ navigation }:DrawerContentComponentProps) =>{
       </View>
       <View style={styles.menuContainer}>
         <TouchableOpacity style={styles.menuButton} onPress={()=> navigation.navigate('StackNavigator')}>
-          <Text style={styles.menuText}>Home</Text>
+            <Ionicons name="compass-outline" size={24} color="purple"/>
+            <Text style={styles.menuText}>Stack Navigator </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuButton} onPress={()=> navigation.navigate('BottomTabNavigator')}>
-          <Text style={styles.menuText}>Options</Text>
+            <Ionicons name="cloud-outline" size={24} color="purple"/>
+            <Text style={styles.menuText}>Bottom Tab </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuButton} onPress={()=> navigation.navigate('TopTabNavigator')}>
+            <Ionicons name="cog" size={24} color="purple"/>
+            <Text style={styles.menuText}>Top Tab </Text>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>

@@ -1,3 +1,3 @@
 export class User{
-  constructor(readonly username, readonly name) {}
+  constructor(readonly username:string, readonly name:string) {}
 }
