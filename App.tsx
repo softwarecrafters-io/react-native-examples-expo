@@ -1,7 +1,6 @@
 import React from "react";
-
-import {DrawerNavigatorCustomContainer} from "./src/09-Navigation/DrawerNavigatorCustom";
+import {TheMovieDBContainer} from "./src/11-TheMovieDB/StackNavigator";
 
 export default function App() {
-  return (<DrawerNavigatorCustomContainer/>);
+  return (<TheMovieDBContainer/>);
 }
