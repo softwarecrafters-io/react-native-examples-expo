@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationOptions } from "@react-navigation/stack";
 import {HomeScreen} from "./screens/HomeScreen";
 import {DetailScreen} from "./screens/DetailScreen";
+import {Movie} from "./domain/model";
 
 export const TheMovieDBContainer = () => (
   <NavigationContainer>
@@ -12,7 +13,7 @@ export const TheMovieDBContainer = () => (
 
 export type RootStackParams = {
   Home: undefined,
-  Detail: undefined,
+  Detail: Movie,
 }
 
 export const StackNavigator = () =>  {
@@ -30,7 +31,7 @@ export const StackNavigator = () =>  {
 
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      <Stack.Screen name={"Home"} options={{headerBackTitle:' '}} component={HomeScreen} />
+      <Stack.Screen name={"Home"} options={{headerBackTitle:' ', title: 'Movies TMDB'}} component={HomeScreen} />
       <Stack.Screen name={"Detail"} options={{headerBackTitle:' '}} component={DetailScreen} />
   </Stack.Navigator>
 )}

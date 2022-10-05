@@ -35,6 +35,29 @@ export const styles = StyleSheet.create({
   menuText:{
     marginLeft:10,
     fontSize:20
-  }
+  },
 
+  imageContainer:{
+    width:300,
+    height:420,
+    marginHorizontal:5
+  },
+  moviePosterShadow:{
+    flex:1,
+    borderRadius:18,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.36,
+    shadowRadius: 6.68,
+
+    elevation: 11,
+  },
+  moviePosterImage:{
+    flex:1,
+    borderRadius:18,
+
+  }
 });
